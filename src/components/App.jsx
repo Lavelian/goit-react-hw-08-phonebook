@@ -10,8 +10,6 @@ import PrivateRoute from './PrivateRoute';
 import useAuth from 'hooks/useAuth';
 import { useFetchCurrentUserMutation } from 'redux/userApi/authApi';
 import 'react-toastify/dist/ReactToastify.css';
-import { theme } from '@chakra-ui/theme';
-console.log(theme);
 
 export default function App() {
   const { isRefreshing, isLogin } = useAuth();
@@ -21,7 +19,9 @@ export default function App() {
   const token = useAuth().takeToken;
 
   useEffect(() => {
+    console.log('jgfjf', isLogin);
     if (token && !isLogin) {
+      console.log('j111', isLogin);
       fetchCurrentUser();
     }
   }, [token, fetchCurrentUser, isLogin]);

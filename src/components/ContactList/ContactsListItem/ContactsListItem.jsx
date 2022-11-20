@@ -7,13 +7,12 @@ export default function ContactsListItem({ name, number, id }) {
   return (
     <ListItem alignItems="center" w={[300, 300, 300, 300, 350]} display="flex">
       <Text mr="auto">{name + ' : ' + number} </Text>
-      {isLoading && <Loader height={17} width={17} />}
       <Button
         type="button"
         onClick={() => removeContact(id)}
         disabled={isLoading}
       >
-        Delete
+        {isLoading ? <Loader height={17} width={17} /> : 'Delete'}
       </Button>
     </ListItem>
   );

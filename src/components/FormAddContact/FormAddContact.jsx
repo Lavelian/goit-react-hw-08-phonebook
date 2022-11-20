@@ -79,9 +79,19 @@ export default function FormAddContact() {
                   required
                 />
               </FormControl>
-              <Box display="flex" alignItems="center">
-                <Button type="submit">Add to Contact</Button>
-                {isLoading && <Loader height={20} width={20} />}
+              <Box
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                w="100%"
+              >
+                <Button type="submit">
+                  {isLoading ? (
+                    <Loader height={20} width={20} />
+                  ) : (
+                    'Add Contact'
+                  )}
+                </Button>
               </Box>
             </VStack>
           </Form>
